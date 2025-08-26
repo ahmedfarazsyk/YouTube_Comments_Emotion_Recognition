@@ -36,13 +36,25 @@ The system then generates **word clouds per emotion**, giving creators insights 
 
 ```
 YouTube_Comments_Emotion_Recognition/
-│── main.py                 # Streamlit application entry point
-│── requirements.txt        # Dependencies
-│── notebooks/              # Jupyter notebooks (experimentation)
-│   └── AI_Project.ipynb
-│── models/                 # Cloned EmoRoBERTa model
-│── screenshots/            # Images for README showcase
-└── README.md
+├── .gitignore
+├── README.md
+├── assets
+    ├── admiration.png
+    ├── annoyance.png
+    ├── app_interface.png
+    ├── confusion.png
+    ├── curiosity.png
+    └── youtube_logo.png
+├── generate_wordclouds.py
+├── main.py
+├── notebook
+    └── yt_comments_emotion_recognition.ipynb
+├── requirements.txt
+└── util_funcs
+    ├── comments.csv
+    ├── get_comments.py
+    ├── predict.py
+    └── preprocess_comments.py
 ```
 
 ---
@@ -69,12 +81,7 @@ pip install -r requirements.txt
 API_KEY=your_api_key_here
 ```
 
-### 4. Setup Hugging Face access  
-```bash
-huggingface-cli login
-```
-
-### 5. Clone EmoRoBERTa model  
+### 4. Clone EmoRoBERTa model  
 
 - Make sure git-lfs is installed (https://git-lfs.com)
 ```bash
@@ -86,7 +93,7 @@ git clone https://huggingface.co/arpanghoshal/EmoRoBERTa
 - Generate one from your settings: https://huggingface.co/settings/tokens
 
 
-### 6. Run the Streamlit app  
+### 5. Run the Streamlit app  
 ```bash
 streamlit run main.py
 ```
