@@ -8,8 +8,6 @@ The system then generates **word clouds per emotion**, giving creators insights 
 
 ## 📸 Screenshots  
 
-> Replace these with your actual images  
-
 - Web Interface Example  
 ![App Screenshot](assets/app_interface.png)  
 
