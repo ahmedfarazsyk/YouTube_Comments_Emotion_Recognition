@@ -1,30 +1,108 @@
-# YouTube Comments Emotion Recognition
+# YouTube Comments Emotion Recognition 🎭  
 
-This project aims to analyze YouTube comments and detect the emotions expressed in them. It uses the YouTube API to fetch comments from any given YouTube video and then applies a natural language processing (NLP) model to classify the emotions present. The project generates word clouds based on different sentiments, providing insights to content creators on how their video is being perceived by their audience.
+This project analyzes **YouTube video comments** and detects the **emotions** expressed in them.  
+It uses the **YouTube API** to fetch comments and applies the **EmoRoBERTa model** (trained on 58k Reddit comments) to classify them into **28 emotions + neutral**.  
+The system then generates **word clouds per emotion**, giving creators insights into how their content resonates emotionally.  
 
-## Features
+---
 
-- Fetches comments from a specified YouTube video using the YouTube API.
-- Analyzes the sentiment of each comment using the EmoRoBERTa model.
-- Classifies emotions into categories such as positive, negative, neutral, and more.
-- Generates word clouds for different sentiments to visually represent the dominant emotions in the comments.
-- Helps YouTubers understand the emotional response to their video based on user feedback in comments.
+## 📸 Screenshots  
 
-## Project Structure
+> Replace these with your actual images  
 
-- **AI_Project.ipynb**: The Jupyter notebook containing the code for the project, including data collection, processing, sentiment analysis, and visualization.
+- Web Interface Example  
+![App Screenshot](assets/app_interface.png)  
 
-## Tools and Technologies
+- Sample Word Cloud  
+![Admiration Word Cloud](assets/admiration.png)  
+![Admiration Word Cloud](assets/annoyance.png)  
+![Admiration Word Cloud](assets/confusion.png)  
+![Admiration Word Cloud](assets/curiosity.png)  
 
-- **Python**: The core programming language used for the project.
-- **YouTube API**: Used to fetch comments from a given YouTube video.
-- **EmoRoBERTa**: A transformer model used to detect emotions from textual data.
-- **Word Cloud**: A Python library used to generate word cloud visualizations.
+---
 
-## Installation
+## 🚀 Features  
 
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/ahmedfarazsyk/YouTube_Comments_Emotion_Recognition.git]
-2. Download File:
-   download AI_Project.ipynb file
+- Fetches comments from any YouTube video via **YouTube API**  
+- Classifies comments into **29 categories**:  
+  admiration, amusement, anger, annoyance, approval, caring, confusion, curiosity, desire, disappointment, disapproval, disgust, embarrassment, excitement, fear, gratitude, grief, joy, love, nervousness, optimism, pride, realization, relief, remorse, sadness, surprise, and neutral  
+- Generates **word clouds** for each detected emotion  
+- Interactive **Streamlit web app** (`main.py`)  
+- Helps content creators understand emotional audience feedback  
+
+---
+
+## 📂 Repository Structure  
+
+```
+YouTube_Comments_Emotion_Recognition/
+│── main.py                 # Streamlit application entry point
+│── requirements.txt        # Dependencies
+│── notebooks/              # Jupyter notebooks (experimentation)
+│   └── AI_Project.ipynb
+│── models/                 # Cloned EmoRoBERTa model
+│── screenshots/            # Images for README showcase
+└── README.md
+```
+
+---
+
+## ⚙️ Installation & Setup  
+
+### 1. Clone the repository  
+```bash
+git clone https://github.com/ahmedfarazsyk/YouTube_Comments_Emotion_Recognition.git
+cd YouTube_Comments_Emotion_Recognition
+```
+
+### 2. Install dependencies  
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Get a YouTube API key  
+- Go to [Google Cloud Console](https://console.cloud.google.com/)  
+- Create a project → Enable **YouTube Data API v3**  
+- Generate an **API key**  
+- Save the key inside a `.env` file as:  
+```
+API_KEY=your_api_key_here
+```
+
+### 4. Setup Hugging Face access  
+```bash
+huggingface-cli login
+```
+
+### 5. Clone EmoRoBERTa model  
+
+- Make sure git-lfs is installed (https://git-lfs.com)
+```bash
+git lfs install
+git clone https://huggingface.co/arpanghoshal/EmoRoBERTa
+```
+
+- When prompted for a password, use an access token with write permissions.
+- Generate one from your settings: https://huggingface.co/settings/tokens
+
+
+### 6. Run the Streamlit app  
+```bash
+streamlit run main.py
+```
+
+---
+
+## 🔮 Future Improvements  
+
+- Dockerize the project (current image size ~5GB makes Docker Hub push difficult)  
+- Deploy on **AWS EC2 / SageMaker** for scalable access  
+- Optimize model size for easier cloud deployment  
+
+---
+
+## 👨‍💻 Author  
+
+**Ahmed Faraz Shaikh**  
+[GitHub Profile](https://github.com/ahmedfarazsyk)  
+
