@@ -4,6 +4,8 @@ This project analyzes **YouTube video comments** and detects the **emotions** ex
 It uses the **YouTube API** to fetch comments and applies the **EmoRoBERTa model** (trained on 58k Reddit comments) to classify them into **28 emotions + neutral**.  
 The system then generates **word clouds per emotion**, giving creators insights into how their content resonates emotionally.  
 
+Medium Link: [Realtime YouTube Comments Emotion Recognition System with NLP and Streamlit](https://medium.com/@shaikhahmedfaraz64/building-a-realtime-youtube-comments-emotion-recognition-system-with-nlp-and-streamlit-e95dfefcd19a)
+
 ---
 
 ## 📸 Screenshots  
